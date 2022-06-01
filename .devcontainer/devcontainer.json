@@ -1,15 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.234.0/containers/dotnet
 {
-	"name": "C# (.NET)",
+	"name": "Node.js",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": { 
 			// Update 'VARIANT' to pick a .NET Core version: 3.1, 5.0, 6.0
 			// Append -bullseye or -focal to pin to an OS version.
-			"VARIANT": "6.0-bullseye",
-			// Options
-			"NODE_VERSION": "lts/*"
+			"VARIANT": "14-buster"
 		}
 	},
 
@@ -18,7 +16,7 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-dotnettools.csharp"
+		"dbaeumer.vscode-eslint"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -51,10 +49,9 @@
 	// "postCreateCommand": "dotnet restore",
 
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "vscode",
+	"forwardPorts": [8080],
+	"remoteUser": "node",
 	"features": {
-		"git": "latest",
-		"azure-cli": "latest",
-		"powershell": "latest"
+		"git": "latest"
 	}
 }
